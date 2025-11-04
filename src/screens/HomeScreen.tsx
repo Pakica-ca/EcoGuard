@@ -50,7 +50,7 @@ export function HomeScreen() {
               animate={{ opacity: 1, y: 0 }}
               className="home-welcome"
             >
-              Dobrodošao nazad, {userData.name} 🌱
+              Dobro došao nazad, {userData.name} 🌱
             </motion.h1>
             <p className="home-level">Eco Čuvar Lv.{userData.level}</p>
           </div>
