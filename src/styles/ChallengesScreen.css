@@ -150,6 +150,35 @@
   overflow: hidden;
 }
 
+/* Photo Challenge Specific Styles */
+.photo-challenge-meta {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.photo-challenge-location,
+.photo-challenge-completions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: rgb(148 163 184);
+  font-size: 0.75rem;
+}
+
+.photo-challenge-location svg,
+.photo-challenge-completions svg {
+  color: rgb(74 222 128);
+  flex-shrink: 0;
+}
+
+.photo-challenge-author {
+  color: rgb(148 163 184);
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
 .challenge-progress-fill {
   height: 100%;
   background: linear-gradient(to right, rgb(34 197 94), rgb(22 163 74));

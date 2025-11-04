@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { BottomNav } from '../components/common/BottomNav';
-import { Search, Trophy, Medal, Award } from 'lucide-react';
+import { Search, Trophy, Medal, Award, Camera, CheckCircle } from 'lucide-react';
 import '../styles/CommunityScreen.css';
 
 type User = {
@@ -12,6 +12,8 @@ type User = {
   avatar?: string;
   badge: 'bronze' | 'silver' | 'gold';
   rank: number;
+  photoChallenges: number;
+  challengesCompleted: number;
 };
 
 export function CommunityScreen() {
@@ -25,6 +27,8 @@ export function CommunityScreen() {
       level: 8,
       badge: 'gold',
       rank: 1,
+      photoChallenges: 28,
+      challengesCompleted: 45,
     },
     {
       id: 2,
@@ -33,6 +37,8 @@ export function CommunityScreen() {
       level: 7,
       badge: 'gold',
       rank: 2,
+      photoChallenges: 24,
+      challengesCompleted: 42,
     },
     {
       id: 3,
@@ -41,6 +47,8 @@ export function CommunityScreen() {
       level: 7,
       badge: 'gold',
       rank: 3,
+      photoChallenges: 21,
+      challengesCompleted: 38,
     },
     {
       id: 4,
@@ -49,6 +57,8 @@ export function CommunityScreen() {
       level: 6,
       badge: 'silver',
       rank: 4,
+      photoChallenges: 18,
+      challengesCompleted: 34,
     },
     {
       id: 5,
@@ -57,6 +67,8 @@ export function CommunityScreen() {
       level: 6,
       badge: 'silver',
       rank: 5,
+      photoChallenges: 16,
+      challengesCompleted: 31,
     },
     {
       id: 6,
@@ -65,6 +77,8 @@ export function CommunityScreen() {
       level: 5,
       badge: 'silver',
       rank: 6,
+      photoChallenges: 14,
+      challengesCompleted: 28,
     },
     {
       id: 7,
@@ -73,6 +87,8 @@ export function CommunityScreen() {
       level: 5,
       badge: 'silver',
       rank: 7,
+      photoChallenges: 12,
+      challengesCompleted: 25,
     },
     {
       id: 8,
@@ -81,6 +97,8 @@ export function CommunityScreen() {
       level: 3,
       badge: 'bronze',
       rank: 8,
+      photoChallenges: 10,
+      challengesCompleted: 22,
     },
     {
       id: 9,
@@ -89,6 +107,8 @@ export function CommunityScreen() {
       level: 4,
       badge: 'bronze',
       rank: 9,
+      photoChallenges: 8,
+      challengesCompleted: 19,
     },
     {
       id: 10,
@@ -97,6 +117,8 @@ export function CommunityScreen() {
       level: 4,
       badge: 'bronze',
       rank: 10,
+      photoChallenges: 6,
+      challengesCompleted: 16,
     },
   ];
 
@@ -245,15 +267,20 @@ export function CommunityScreen() {
               <div className="community-user-info">
                 <div className="community-user-info-header">
                   <h4 className="community-user-name">{user.name}</h4>
-                  <span className={`community-user-badge ${getBadgeColor(user.badge).replace('bg-', '')}`}>
-                    {user.badge === 'gold'
-                      ? 'Zlato'
-                      : user.badge === 'silver'
-                      ? 'Srebro'
-                      : 'Bronza'}
-                  </span>
                 </div>
-                <p className="community-user-level">Level {user.level}</p>
+                <div className="community-user-stats">
+                  <span className="community-user-level">Level {user.level}</span>
+                  <div className="community-user-stat-items">
+                    <div className="community-user-stat">
+                      <Camera className="community-user-stat-icon" />
+                      <span>{user.photoChallenges}</span>
+                    </div>
+                    <div className="community-user-stat">
+                      <CheckCircle className="community-user-stat-icon" />
+                      <span>{user.challengesCompleted}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Points */}

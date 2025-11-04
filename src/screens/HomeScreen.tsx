@@ -113,22 +113,26 @@ export function HomeScreen() {
         <h2 className="home-section-title">Nedavne aktivnosti</h2>
         <div className="home-activity-list">
           {[
-            { title: 'Reciklirano 5 PET flaša', time: 'Prije 2 sata', points: '+50' },
-            { title: 'Završen izazov "Bicikl vikendom"', time: 'Prije 1 dan', points: '+120' },
-            { title: 'Posađeno drvo u parku', time: 'Prije 3 dana', points: '+200' },
+            { title: 'Fotografija potvrđena - "Čišćenje parka"', time: 'Prije 1 sat', points: '+150', type: 'photo' },
+            { title: 'Reciklirano 5 PET flaša', time: 'Prije 2 sata', points: '+50', type: 'standard' },
+            { title: 'Kreiran novi foto izazov', time: 'Prije 4 sata', points: '+25', type: 'create' },
+            { title: 'Završen izazov "Bicikl vikendom"', time: 'Prije 1 dan', points: '+120', type: 'standard' },
+            { title: 'Fotografija na verifikaciji', time: 'Prije 2 dana', points: 'Na čekanju', type: 'pending' },
           ].map((activity, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 + index * 0.1 }}
-              className="home-activity-item"
+              className={`home-activity-item ${activity.type === 'photo' ? 'photo-activity' : activity.type === 'pending' ? 'pending-activity' : activity.type === 'create' ? 'create-activity' : ''}`}
             >
               <div>
                 <p className="home-activity-title">{activity.title}</p>
                 <p className="home-activity-time">{activity.time}</p>
               </div>
-              <div className="home-activity-points">{activity.points}</div>
+              <div className={`home-activity-points ${activity.type === 'pending' ? 'pending-points' : ''}`}>
+                {activity.points}
+              </div>
             </motion.div>
           ))}
         </div>

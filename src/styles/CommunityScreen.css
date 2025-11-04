@@ -280,22 +280,27 @@
 }
 
 .community-user-points {
-  color: rgb(74 222 128);
-  font-weight: 600;
-  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   text-align: right;
+  min-width: 4rem;
+  flex-shrink: 0;
 }
 
 .community-user-points-value {
   color: rgb(74, 222, 128);
   margin: 0;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
 }
 
 .community-user-points-label {
   color: rgb(107, 114, 128);
   font-size: 0.75rem;
   margin: 0;
+  line-height: 1;
 }
 
 .community-user-item {
@@ -360,7 +365,8 @@
 .community-user-info-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
 }
 
 .community-user-name {
@@ -368,12 +374,41 @@
   margin: 0;
   font-size: 1rem;
   font-weight: 500;
+  flex: 1;
+}
+
+.community-user-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.community-user-badge.gold {
+  background: rgba(251, 191, 36, 0.2);
+  color: rgb(251, 191, 36);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+}
+
+.community-user-badge.silver {
+  background: rgba(203, 213, 225, 0.2);
+  color: rgb(203, 213, 225);
+  border: 1px solid rgba(203, 213, 225, 0.4);
+}
+
+.community-user-badge.bronze {
+  background: rgba(234, 88, 12, 0.2);
+  color: rgb(234, 88, 12);
+  border: 1px solid rgba(234, 88, 12, 0.4);
 }
 
 .community-user-level {
   color: rgb(148, 163, 184);
   font-size: 0.875rem;
-  margin: 0.25rem 0 0 0;
+  margin: 0;
 }
 
 /* Rank Icons */
@@ -393,4 +428,121 @@
   width: 1.5rem;
   height: 1.5rem;
   color: rgb(234, 88, 12);
+}
+
+/* User Stats */
+.community-user-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.community-user-stat-items {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.community-user-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.community-user-stat-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: rgb(134, 239, 172);
+}
+
+.community-user-stat span {
+  color: rgb(148, 163, 184);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Mobile Responsive Fixes */
+@media (max-width: 768px) {
+  .community-user-points {
+    min-width: 3rem;
+    max-width: 4rem;
+  }
+  
+  .community-user-points-value {
+    font-size: 0.875rem;
+    word-break: break-word;
+  }
+  
+  .community-user-points-label {
+    font-size: 0.625rem;
+  }
+  
+  .community-user-info {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+  }
+  
+  .community-user-name {
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .community-user-level {
+    font-size: 0.75rem;
+  }
+  
+  .community-user-stat-items {
+    gap: 0.5rem;
+  }
+  
+  .community-user-stat span {
+    font-size: 0.625rem;
+  }
+  
+  .community-user-stat-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+  
+  .community-user-content {
+    gap: 0.75rem;
+  }
+  
+  .community-user-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .community-user-points {
+    min-width: 2.5rem;
+    max-width: 3rem;
+  }
+  
+  .community-user-points-value {
+    font-size: 0.75rem;
+  }
+  
+  .community-user-points-label {
+    font-size: 0.5rem;
+  }
+  
+  .community-user-name {
+    font-size: 0.8rem;
+  }
+  
+  .community-user-level {
+    font-size: 0.625rem;
+  }
+  
+  .community-user-avatar {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.75rem;
+  }
 }

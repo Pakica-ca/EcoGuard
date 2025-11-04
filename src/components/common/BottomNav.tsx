@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { NavigationContext, Screen } from '../../App';
-import { Home, Trophy, BarChart3, Users, Settings } from 'lucide-react';
+import { Home, Camera, BarChart3, Users, Settings } from 'lucide-react';
 import '../../styles/BottomNav.css';
 
 export function BottomNav() {
@@ -8,7 +8,7 @@ export function BottomNav() {
 
   const navItems = [
     { screen: 'home' as Screen, icon: Home, label: 'Početna' },
-    { screen: 'challenges' as Screen, icon: Trophy, label: 'Izazovi' },
+    { screen: 'photoChallenge' as Screen, icon: Camera, label: 'Foto Izazovi' },
     { screen: 'statistics' as Screen, icon: BarChart3, label: 'Statistika' },
     { screen: 'community' as Screen, icon: Users, label: 'Zajednica' },
     { screen: 'settings' as Screen, icon: Settings, label: 'Podešavanja' },

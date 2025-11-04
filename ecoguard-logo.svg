@@ -1,0 +1,20 @@
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Shield -->
+  <path 
+    d="M40 15 L35 10 L25 10 L20 15 L20 35 C20 50 30 60 40 60 C50 60 60 50 60 35 L60 15 L55 10 L45 10 Z"
+    fill="#4ade80" 
+    stroke="#4ade80" 
+    stroke-width="1.5"
+  />
+  
+  <!-- Leaf Overlay -->
+  <path 
+    d="M35 25 C35 25 30 30 35 40 C40 35 45 30 45 25 C45 20 40 20 35 25 Z"
+    fill="#22c55e"
+  />
+  
+  <!-- App Name -->
+  <text x="75" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="white">
+    EcoGuard
+  </text>
+</svg>

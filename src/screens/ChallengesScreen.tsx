@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { BottomNav } from '../components/common/BottomNav';
-import { Recycle, Bike, TreePine, Droplet, Sun, Wind, CheckCircle2 } from 'lucide-react';
+import { Recycle, Bike, TreePine, Droplet, Sun, Wind, CheckCircle2, Camera, Users, MapPin } from 'lucide-react';
 import '../styles/ChallengesScreen.css';
 
 type Challenge = {
@@ -14,6 +14,10 @@ type Challenge = {
   icon: React.ElementType;
   status: 'active' | 'completed' | 'available';
   gradient: string;
+  type?: 'standard' | 'photo';
+  location?: string;
+  author?: string;
+  completions?: number;
 };
 
 export function ChallengesScreen() {
@@ -83,6 +87,38 @@ export function ChallengesScreen() {
       icon: Wind,
       status: 'active',
       gradient: 'from-teal-500 to-green-600',
+      type: 'standard',
+    },
+    // Photo Challenges
+    {
+      id: 7,
+      title: 'Očisti park Kalemegdan',
+      description: 'Fotografiši smeće u parku i pokušaj da ga pokupljaš',
+      progress: 0,
+      total: 1,
+      points: 150,
+      icon: Camera,
+      status: 'available',
+      gradient: 'from-purple-500 to-pink-600',
+      type: 'photo',
+      location: 'Kalemegdan, Beograd',
+      author: 'Ana Petrović',
+      completions: 12,
+    },
+    {
+      id: 8,
+      title: 'Razdvojeno bacanje otpada',
+      description: 'Fotografiši pravilno razvrstan otpad u kontejnerima',
+      progress: 1,
+      total: 1,
+      points: 100,
+      icon: Camera,
+      status: 'completed',
+      gradient: 'from-blue-500 to-purple-600',
+      type: 'photo',
+      location: 'Novi Beograd',
+      author: 'Stefan Ilić',
+      completions: 8,
     },
   ]);
 
@@ -133,6 +169,28 @@ export function ChallengesScreen() {
                     <p className="challenge-description">
                       {challenge.description}
                     </p>
+                    {/* Photo Challenge Info */}
+                    {challenge.type === 'photo' && (
+                      <div className="photo-challenge-meta">
+                        {challenge.location && (
+                          <div className="photo-challenge-location">
+                            <MapPin className="w-3 h-3" />
+                            <span>{challenge.location}</span>
+                          </div>
+                        )}
+                        {challenge.author && (
+                          <div className="photo-challenge-author">
+                            Kreirao: {challenge.author}
+                          </div>
+                        )}
+                        {challenge.completions && (
+                          <div className="photo-challenge-completions">
+                            <Users className="w-3 h-3" />
+                            <span>{challenge.completions} završenih</span>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                   {challenge.status === 'completed' && (
                     <CheckCircle2 className="challenge-completed-icon" />

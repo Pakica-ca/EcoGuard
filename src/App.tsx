@@ -11,6 +11,7 @@ import { ProfileScreen } from './screens/ProfileScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
 import { NotificationsScreen } from './screens/NotificationsScreen';
 import { EcoTipsScreen } from './screens/EcoTipsScreen';
+import { PhotoChallengeScreen } from './screens/PhotoChallengeScreen';
 import './styles/App.css';
 
 export type Screen = 
@@ -25,7 +26,8 @@ export type Screen =
   | 'profile'
   | 'settings'
   | 'notifications'
-  | 'ecoTips';
+  | 'ecoTips'
+  | 'photoChallenge';
 
 export type NavigationContextType = {
   currentScreen: Screen;
@@ -56,7 +58,7 @@ export const NavigationContext = React.createContext<NavigationContextType>({
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('splash');
   const [userData] = useState({
-    name: 'Niggac',
+    name: 'Nenad',
     level: 3,
     points: 2450,
     recycled: 127,
@@ -99,6 +101,7 @@ export default function App() {
         {currentScreen === 'settings' && <SettingsScreen />}
         {currentScreen === 'notifications' && <NotificationsScreen />}
         {currentScreen === 'ecoTips' && <EcoTipsScreen />}
+        {currentScreen === 'photoChallenge' && <PhotoChallengeScreen />}
       </div>
     </NavigationContext.Provider>
   );

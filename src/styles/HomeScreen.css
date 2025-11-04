@@ -208,6 +208,27 @@
   color: rgb(134 239 172);
 }
 
+/* Photo Challenge Activity Styles */
+.home-activity-item.photo-activity {
+  border-left: 3px solid rgb(34 197 94);
+  background: rgba(34 197 94 / 0.05);
+}
+
+.home-activity-item.pending-activity {
+  border-left: 3px solid rgb(234 179 8);
+  background: rgba(234 179 8 / 0.05);
+}
+
+.home-activity-item.create-activity {
+  border-left: 3px solid rgb(59 130 246);
+  background: rgba(59 130 246 / 0.05);
+}
+
+.pending-points {
+  color: rgb(234 179 8) !important;
+  font-size: 0.75rem;
+}
+
 .home-quick-actions {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
