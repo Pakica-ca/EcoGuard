@@ -262,13 +262,6 @@ export function CommunityScreen() {
                 <p className="community-user-points-label">poena</p>
               </div>
             </div>
-
-            {/* Action */}
-            <div className="community-user-action">
-              <button className="community-user-button">
-                Pogledaj profil
-              </button>
-            </div>
           </motion.div>
         ))}
         </div>

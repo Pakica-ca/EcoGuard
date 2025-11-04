@@ -376,28 +376,6 @@
   margin: 0.25rem 0 0 0;
 }
 
-.community-user-action {
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(71, 85, 105, 0.5);
-}
-
-.community-user-button {
-  width: 100%;
-  background: transparent;
-  border: none;
-  color: rgb(74, 222, 128);
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.community-user-button:hover {
-  color: rgb(34, 197, 94);
-  background: rgba(34, 197, 94, 0.1);
-}
-
 /* Rank Icons */
 .community-rank-icon-gold {
   width: 1.5rem;

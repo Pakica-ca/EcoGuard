@@ -134,6 +134,13 @@
 
 .challenge-points {
   color: rgb(74 222 128);
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .challenge-points {
+    font-size: 0.875rem;
+  }
 }
 
 .challenge-progress-bar {

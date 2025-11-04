@@ -1,63 +1,122 @@
-/* Global CSS Reset and Base Styles *//*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
+/* Basic reset and mobile optimizations *//* Global CSS Reset and Base Styles *//*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
 
-* {@layer properties {
+* {
 
-  margin: 0;  @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+  box-sizing: border-box;* {@layer properties {
+
+  margin: 0;
+
+  padding: 0;  margin: 0;  @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+
+}
 
   padding: 0;    *, :before, :after, ::backdrop {
 
-  box-sizing: border-box;      --tw-translate-x: 0;
+html, body {
 
-}      --tw-translate-y: 0;
+  width: 100%;  box-sizing: border-box;      --tw-translate-x: 0;
+
+  max-width: 100vw;
+
+  overflow-x: hidden;}      --tw-translate-y: 0;
+
+}
 
       --tw-translate-z: 0;
 
-html, body {      --tw-rotate-x: rotateX(0);
+body {
 
-  height: 100%;      --tw-rotate-y: rotateY(0);
+  margin: 0;html, body {      --tw-rotate-x: rotateX(0);
 
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',      --tw-rotate-z: rotateZ(0);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',      --tw-skew-x: skewX(0);
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',  height: 100%;      --tw-rotate-y: rotateY(0);
 
-    sans-serif;      --tw-skew-y: skewY(0);
+    sans-serif;
 
-  -webkit-font-smoothing: antialiased;      --tw-space-y-reverse: 0;
+  -webkit-font-smoothing: antialiased;  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',      --tw-rotate-z: rotateZ(0);
 
-  -moz-osx-font-smoothing: grayscale;      --tw-border-style: solid;
+  -moz-osx-font-smoothing: grayscale;
 
-}      --tw-gradient-position: initial;
+}    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',      --tw-skew-x: skewX(0);
 
-      --tw-gradient-from: #0000;
+
+
+#root {    sans-serif;      --tw-skew-y: skewY(0);
+
+  width: 100%;
+
+  max-width: 100vw;  -webkit-font-smoothing: antialiased;      --tw-space-y-reverse: 0;
+
+  overflow-x: hidden;
+
+}  -moz-osx-font-smoothing: grayscale;      --tw-border-style: solid;
+
+
+
+/* Remove default styles */}      --tw-gradient-position: initial;
+
+ul, ol {
+
+  list-style: none;      --tw-gradient-from: #0000;
+
+}
 
 #root {      --tw-gradient-via: #0000;
 
-  height: 100%;      --tw-gradient-to: #0000;
+a {
 
-}      --tw-gradient-stops: initial;
+  text-decoration: none;  height: 100%;      --tw-gradient-to: #0000;
 
-      --tw-gradient-via-stops: initial;
+  color: inherit;
 
-/* Remove default styles */      --tw-gradient-from-position: 0%;
+}}      --tw-gradient-stops: initial;
 
-ul, ol {      --tw-gradient-via-position: 50%;
+
+
+button {      --tw-gradient-via-stops: initial;
+
+  border: none;
+
+  background: none;/* Remove default styles */      --tw-gradient-from-position: 0%;
+
+  cursor: pointer;
+
+  font-family: inherit;ul, ol {      --tw-gradient-via-position: 50%;
+
+}
 
   list-style: none;      --tw-gradient-to-position: 100%;
 
-}      --tw-leading: initial;
+input, textarea {
 
-      --tw-font-weight: initial;
+  font-family: inherit;}      --tw-leading: initial;
+
+  border: none;
+
+  outline: none;      --tw-font-weight: initial;
+
+}
 
 a {      --tw-shadow: 0 0 #0000;
 
-  text-decoration: none;      --tw-shadow-color: initial;
+img {
 
-  color: inherit;      --tw-shadow-alpha: 100%;
+  max-width: 100%;  text-decoration: none;      --tw-shadow-color: initial;
 
-}      --tw-inset-shadow: 0 0 #0000;
+  height: auto;
 
-      --tw-inset-shadow-color: initial;
+}  color: inherit;      --tw-shadow-alpha: 100%;
 
+
+
+code {}      --tw-inset-shadow: 0 0 #0000;
+
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+
+    monospace;      --tw-inset-shadow-color: initial;
+
+}
 button {      --tw-inset-shadow-alpha: 100%;
 
   border: none;      --tw-ring-color: initial;
