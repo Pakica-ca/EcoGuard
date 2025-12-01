@@ -41,7 +41,7 @@ export function SplashScreen() {
         transition={{ delay: 0.3, duration: 0.6 }}
         className="splash-title"
       >
-        EcoGuard
+        GrowWithuUs
       </motion.h1>
 
       <motion.p
@@ -50,7 +50,7 @@ export function SplashScreen() {
         transition={{ delay: 0.5, duration: 0.6 }}
         className="splash-subtitle"
       >
-        Čuvaj prirodu. Postani EcoGuard.
+        Čuvaj prirodu. 
       </motion.p>
     </div>
   );

@@ -212,6 +212,12 @@
   margin-bottom: 0.5rem;
   display: block;
 }
+.profile-achievement-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.75rem;
+  margin-top: 1rem;
+}
 
 .profile-achievement-icon.locked {
   opacity: 0.3;

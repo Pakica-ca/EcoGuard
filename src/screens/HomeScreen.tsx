@@ -146,7 +146,7 @@ export function HomeScreen() {
             onClick={() => navigateTo('ecoTips')}
             className="home-quick-action"
           >
-            <div className="home-quick-action-emoji">💡</div>
+            <div className="home-quick-action-emoji"><svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="#2bc154" d="M9.973 18H11v-5h2v5h1.027c.132-1.202.745-2.193 1.74-3.277c.113-.122.832-.867.917-.973a6 6 0 1 0-9.37-.002c.086.107.807.853.918.974c.996 1.084 1.609 2.076 1.741 3.278M10 20v1h4v-1zm-4.246-5a8 8 0 1 1 12.49.002C17.624 15.774 16 17 16 18.5V21a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.5C8 17 6.375 15.774 5.754 15"></path></svg></div>
             <p className="home-quick-action-title">Eko savjeti</p>
             <p className="home-quick-action-subtitle">Saznaj više</p>
           </button>
@@ -154,7 +154,7 @@ export function HomeScreen() {
             onClick={() => navigateTo('community')}
             className="home-quick-action purple"
           >
-            <div className="home-quick-action-emoji">👥</div>
+            <div className="home-quick-action-emoji"><svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 512 512"><circle cx={152} cy={184} r={72} fill="#2bc154"></circle><path fill="#2bc154" d="M234 296c-28.16-14.3-59.24-20-82-20c-44.58 0-136 27.34-136 82v42h150v-16.07c0-19 8-38.05 22-53.93c11.17-12.68 26.81-24.45 46-34"></path><path fill="#2bc154" d="M340 288c-52.07 0-156 32.16-156 96v48h312v-48c0-63.84-103.93-96-156-96"></path><circle cx={340} cy={168} r={88} fill="#2bc154"></circle></svg></div>
             <p className="home-quick-action-title">Zajednica</p>
             <p className="home-quick-action-subtitle">Rang lista</p>
           </button>

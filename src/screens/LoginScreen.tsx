@@ -28,7 +28,7 @@ export function LoginScreen() {
             <Shield className="login-logo-shield" />
             <Leaf className="login-logo-leaf" />
           </div>
-          <h1 className="login-logo-text">EcoGuard</h1>
+          <h1 className="login-logo-text">Grow With Us</h1>
         </div>
 
         {/* Login form */}

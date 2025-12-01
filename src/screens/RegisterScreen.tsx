@@ -42,7 +42,7 @@ export function RegisterScreen() {
             <Shield className="register-logo-shield" strokeWidth={1.5} />
             <Leaf className="register-logo-leaf" />
           </div>
-          <h1 className="register-logo-text">EcoGuard</h1>
+          <h1 className="register-logo-text">GrowWithUs</h1>
         </div>
 
         {/* Register form */}
