@@ -155,7 +155,7 @@ export function CommunityScreen() {
           animate={{ opacity: 1, y: 0 }}
           className="community-title"
         >
-          Zajednica 👥
+          Zajednica <svg className='inline-block' xmlns="http://www.w3.org/2000/svg" width={30} height={30} viewBox="0 0 512 512"><circle cx={152} cy={184} r={72} fill="#2bc154"></circle><path fill="#2bc154" d="M234 296c-28.16-14.3-59.24-20-82-20c-44.58 0-136 27.34-136 82v42h150v-16.07c0-19 8-38.05 22-53.93c11.17-12.68 26.81-24.45 46-34"></path><path fill="#2bc154" d="M340 288c-52.07 0-156 32.16-156 96v48h312v-48c0-63.84-103.93-96-156-96"></path><circle cx={340} cy={168} r={88} fill="#2bc154"></circle></svg>
         </motion.h1>
         <p className="community-subtitle">Top 10 EcoGuarda</p>
 

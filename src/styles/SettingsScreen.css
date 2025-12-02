@@ -226,3 +226,7 @@
   color: rgb(34, 197, 94);
   background: rgba(34, 197, 94, 0.1);
 }
+
+svg {
+  display: inline-block;
+}

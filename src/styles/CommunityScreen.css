@@ -294,6 +294,7 @@
   font-weight: 600;
   font-size: 1rem;
   line-height: 1.2;
+  text-align: right;
 }
 
 .community-user-points-label {
@@ -321,6 +322,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  width: 100%;
 }
 
 .community-user-rank {
