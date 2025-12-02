@@ -548,3 +548,133 @@
     font-size: 0.75rem;
   }
 }
+/* Dodaj ovo na kraj postojećeg CSS-a */
+
+.community-no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: rgb(148 163 184);
+  background: rgba(30 41 59 / 0.5);
+  backdrop-filter: blur(16px);
+  border-radius: 1rem;
+  border: 1px solid rgba(51 65 85 / 0.5);
+  margin-top: 1rem;
+}
+
+.community-no-results p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.community-reset-btn {
+  background: linear-gradient(135deg, rgb(22 163 74), rgb(34 197 94));
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.community-reset-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Novi container za points i rank */
+.community-user-points-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  min-width: 5rem;
+  flex-shrink: 0;
+}
+
+/* Rank desno od poena */
+.community-user-rank-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(51 65 85 / 0.5);
+}
+
+.community-user-rank-right .community-rank-icon-gold,
+.community-user-rank-right .community-rank-icon-silver,
+.community-user-rank-right .community-rank-icon-bronze {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.community-user-rank-right .community-user-rank-number {
+  color: rgb(148 163 184);
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+/* Mobile responsive za novi layout */
+@media (max-width: 768px) {
+  .community-user-points-container {
+    min-width: 4rem;
+    max-width: 4rem;
+  }
+
+  .community-user-points-value {
+    font-size: 0.875rem;
+    word-break: break-word;
+  }
+
+  .community-user-points-label {
+    font-size: 0.625rem;
+  }
+
+  .community-user-rank-right {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .community-user-rank-right .community-rank-icon-gold,
+  .community-user-rank-right .community-rank-icon-silver,
+  .community-user-rank-right .community-rank-icon-bronze {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .community-user-rank-right .community-user-rank-number {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .community-user-points-container {
+    min-width: 3.5rem;
+    max-width: 3.5rem;
+  }
+
+  .community-user-points-value {
+    font-size: 0.75rem;
+  }
+
+  .community-user-points-label {
+    font-size: 0.5rem;
+  }
+
+  .community-user-rank-right {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .community-user-rank-right .community-rank-icon-gold,
+  .community-user-rank-right .community-rank-icon-silver,
+  .community-user-rank-right .community-rank-icon-bronze {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .community-user-rank-right .community-user-rank-number {
+    font-size: 0.625rem;
+  }
+}
