@@ -8,7 +8,7 @@ export function BottomNav() {
 
   const navItems = [
     { screen: 'home' as Screen, icon: Home, label: 'Početna' },
-    { screen: 'photoChallenge' as Screen, icon: Camera, label: 'Foto Izazovi' },
+    { screen: 'photoChallenge' as Screen, icon: Camera, label: 'Izazovi' },
     { screen: 'statistics' as Screen, icon: BarChart3, label: 'Statistika' },
     { screen: 'community' as Screen, icon: Users, label: 'Zajednica' },
     { screen: 'settings' as Screen, icon: Settings, label: 'Podešavanja' },
