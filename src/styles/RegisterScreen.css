@@ -249,3 +249,19 @@
 .register-footer-link:hover {
   color: rgb(134, 239, 172);
 }
+
+/* Terms link next to checkbox: plain green text link to match app theme */
+.register-terms-link {
+  background: none;
+  border: none;
+  color: var(--color-green-500, rgb(34, 197, 94));
+  margin-left: 8px;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0;
+}
+
+.register-terms-link:hover {
+  color: var(--color-green-400, rgb(74, 222, 128));
+}

@@ -12,6 +12,7 @@ import { SettingsScreen } from './screens/SettingsScreen';
 import { NotificationsScreen } from './screens/NotificationsScreen';
 import { EcoTipsScreen } from './screens/EcoTipsScreen';
 import { PhotoChallengeScreen } from './screens/PhotoChallengeScreen';
+import { TermsScreen } from './screens/TermsScreen';
 import './styles/App.css';
 
 export type Screen = 
@@ -27,6 +28,7 @@ export type Screen =
   | 'settings'
   | 'notifications'
   | 'ecoTips'
+  | 'terms'
   | 'photoChallenge';
 
 export type Theme = 'light' | 'dark';
@@ -40,7 +42,7 @@ export type NavigationContextType = {
   currentScreen: Screen;
   navigateTo: (screen: Screen) => void;
   userData: {
-    name: string;z
+    name: string;
     level: number;
     points: number;
     recycled: number;
@@ -132,6 +134,7 @@ export default function App() {
         {currentScreen === 'notifications' && <NotificationsScreen />}
         {currentScreen === 'ecoTips' && <EcoTipsScreen />}
         {currentScreen === 'photoChallenge' && <PhotoChallengeScreen />}
+        {currentScreen === 'terms' && <TermsScreen />}
       </div>
     </NavigationContext.Provider>
     </ThemeContext.Provider>

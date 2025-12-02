@@ -66,6 +66,14 @@ export function SettingsScreen() {
           description: 'Upravljaj pristupom aplikaciji',
           type: 'link' as const,
         },
+        {
+          id: 'terms',
+          icon: Info,
+          label: 'Uslovi korišćenja',
+          description: 'Pročitaj pravila korišćenja',
+          type: 'link' as const,
+          onClick: () => navigateTo('terms'),
+        },
       ],
     },
     {
@@ -117,7 +125,16 @@ export function SettingsScreen() {
             <div className="settings-section-container">
               {section.items.map((item, itemIndex) => (
                 <div key={item.id}>
-                  <div className="settings-item">
+                  <div
+                    className="settings-item"
+                    onClick={() => {
+                      if (item.type !== 'toggle' && (item as any).onClick) {
+                        (item as any).onClick();
+                      }
+                    }}
+                    role={item.type !== 'toggle' ? 'button' : undefined}
+                    tabIndex={item.type !== 'toggle' ? 0 : undefined}
+                  >
                     <div className="settings-item-icon">
                       <item.icon className="w-5 h-5" />
                     </div>

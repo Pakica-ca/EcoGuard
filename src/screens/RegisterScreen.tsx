@@ -131,6 +131,13 @@ export function RegisterScreen() {
               <label htmlFor="terms" className="register-checkbox-label">
                 Prihvatam uslove korišćenja
               </label>
+              <button
+                type="button"
+                className="register-terms-link"
+                onClick={() => navigateTo('terms')}
+              >
+                Pročitaj uslove
+              </button>
             </div>
 
             <button
