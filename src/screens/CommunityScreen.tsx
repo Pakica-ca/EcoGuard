@@ -167,6 +167,20 @@ export function CommunityScreen() {
     }
   };
 
+  const getBadgeCBorder = (badge: string) => {
+  switch (badge) {
+    case "gold":
+      return "border-gold";
+    case "silver":
+      return "border-silver";
+    case "bronze":
+      return "border-bronze";
+    default:
+      return "";
+  }
+};
+
+
   const getRankIcon = (rank: number) => {
     if (rank === 1) return <Trophy className="community-rank-icon-gold" />;
     if (rank === 2) return <Medal className="community-rank-icon-silver" />;
@@ -336,9 +350,8 @@ export function CommunityScreen() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: user.rank * 0.05 }}
-              className={`community-user-item ${
-                user.rank <= 3 ? "community-user-item-top" : ""
-              }`}
+             className={`community-user-item ${getBadgeCBorder(user.badge)}`}
+
             >
               <div className="community-user-content">
                 {/* Avatar */}
@@ -357,9 +370,7 @@ export function CommunityScreen() {
                 <div className="community-user-info">
                   <div className="community-user-info-header">
                     <h4 className="community-user-name">{user.name}</h4>
-                    <span className={getBadgeClass(user.badge)}>
-                      {user.badge.charAt(0).toUpperCase() + user.badge.slice(1)}
-                    </span>
+                    {/* Pusi kurac Mtel */}
                   </div>
                   <div className="community-user-stats">
                     <span className="community-user-level">
