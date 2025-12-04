@@ -7,17 +7,41 @@ import '../styles/LoginScreen.css';
 
 export function LoginScreen() {
   const { navigateTo } = useContext(NavigationContext);
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email: username,     
-    password: password
-  });}
+    if (!email || !password) {
+      alert('Unesite email i lozinku');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: email,
+        password: password,
+      });
+
+      if (error) {
+        console.error('Supabase login error:', error);
+        // show the server message when available
+        alert(error.message || 'Greška prilikom prijave');
+        return;
+      }
+
+      // successful login
+      navigateTo('home');
+    } catch (err: any) {
+      console.error('Unexpected login error:', err);
+      alert(err?.message || String(err));
+    } finally {
+      setLoading(false);
+    }
+  };
 
 
   return (
@@ -43,18 +67,18 @@ export function LoginScreen() {
 
           <form onSubmit={handleLogin} className="login-form">
             <div className="login-field">
-              <label htmlFor="username" className="login-label">
-                Korisnicko Ime
+              <label htmlFor="email" className="login-label">
+                Email
               </label>
               <div className="login-input-container">
-                <User className="login-input-icon" />
+                <Mail className="login-input-icon" />
                 <input
-                  id="username"
-                  type="username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="login-input"
-                  placeholder="korisnicko ime"
+                  placeholder="youremail@example.com"
                 />
               </div>
             </div>
@@ -86,8 +110,9 @@ export function LoginScreen() {
             <button
               type="submit"
               className="login-submit-button"
+              disabled={loading}
             >
-              Prijavi se
+              {loading ? 'Učitavanje...' : 'Prijavi se'}
             </button>
           </form>
 

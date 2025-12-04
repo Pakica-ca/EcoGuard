@@ -9,11 +9,12 @@ export function RegisterScreen() {
   const { navigateTo } = useContext(NavigationContext);
   const [formData, setFormData] = useState({
     name: '',
-    username: '',
+    email: '',
     password: '',
     confirmPassword: '',
     termsAccepted: false,
   });
+  const [loading, setLoading] = useState(false);
 
   const handleRegister = async (e: React.FormEvent) => {
   e.preventDefault();
@@ -27,16 +28,39 @@ export function RegisterScreen() {
     alert("Morate prihvatiti uslove korišćenja");
     return;
   }
+  if (!formData.email || !formData.password) {
+    alert('Popunite email i lozinku');
+    return;
+  }
 
-  const { data, error } = await supabase.auth.signUp({
-    email: formData.username,  
-    password: formData.password,
-    options: {
-      data: {
-        name: formData.name,
-      }
+  setLoading(true);
+  try {
+    const { data, error } = await supabase.auth.signUp({
+      email: formData.email,
+      password: formData.password,
+      options: {
+        data: {
+          name: formData.name,
+        },
+      },
+    });
+
+    if (error) {
+      console.error('Supabase signUp error:', error);
+      alert(error.message || 'Greška prilikom registracije');
+      return;
     }
-  });}
+
+    // If confirmation is required you may want to navigate to login and tell user to check email
+    alert('Uspešno! Proverite email za potvrdu naloga ako je potrebno.');
+    navigateTo('login');
+  } catch (err: any) {
+    console.error('Unexpected register error:', err);
+    alert(err?.message || String(err));
+  } finally {
+    setLoading(false);
+  }
+};
 
 
   return (
@@ -88,18 +112,18 @@ export function RegisterScreen() {
             </div>
 
             <div className="register-field">
-              <label htmlFor="username" className="register-label">
-                Korisnicko Ime
+              <label htmlFor="email" className="register-label">
+                Email
               </label>
               <div className="register-input-container">
-                <User className="register-input-icon" />
+                <Mail className="register-input-icon" />
                 <input
-                  id="username"
+                  id="email"
                   type="email"
-                  value={formData.username}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, username: e.target.value })}
+                  value={formData.email}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, email: e.target.value })}
                   className="register-input"
-                  placeholder="Korisnicko ime"
+                  placeholder="youremail@example.com"
                 />
               </div>
             </div>
@@ -163,8 +187,9 @@ export function RegisterScreen() {
             <button
               type="submit"
               className="register-submit-button"
+              disabled={loading}
             >
-              Kreiraj nalog
+              {loading ? 'Kreiranje...' : 'Kreiraj nalog'}
             </button>
           </form>
 
