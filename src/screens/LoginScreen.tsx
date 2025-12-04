@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { motion } from 'motion/react';
 import { NavigationContext } from '../App';
+import { supabase } from "../supabase-client";
 import { Shield, Leaf, Mail, Lock, User } from 'lucide-react';
 import '../styles/LoginScreen.css';
 
@@ -9,10 +10,15 @@ export function LoginScreen() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    navigateTo('home');
-  };
+  const handleLogin = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: username,     
+    password: password
+  });}
+
 
   return (
     <div className="login-screen">

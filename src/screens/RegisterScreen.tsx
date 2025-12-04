@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { motion } from 'motion/react';
+import { supabase } from "../supabase-client";
 import { NavigationContext } from '../App';
 import { Shield, Leaf, User, Mail, Lock, ArrowLeft } from 'lucide-react';
 import '../styles/RegisterScreen.css';
@@ -14,10 +15,29 @@ export function RegisterScreen() {
     termsAccepted: false,
   });
 
-  const handleRegister = (e: React.FormEvent) => {
-    e.preventDefault();
-    navigateTo('home');
-  };
+  const handleRegister = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (formData.password !== formData.confirmPassword) {
+    alert("Lozinke se ne poklapaju");
+    return;
+  }
+
+  if (!formData.termsAccepted) {
+    alert("Morate prihvatiti uslove korišćenja");
+    return;
+  }
+
+  const { data, error } = await supabase.auth.signUp({
+    email: formData.username,  
+    password: formData.password,
+    options: {
+      data: {
+        name: formData.name,
+      }
+    }
+  });}
+
 
   return (
     <div className="register-screen">
