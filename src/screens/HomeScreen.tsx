@@ -69,6 +69,24 @@ export function HomeScreen() {
     getUserReciklirano().then(reciklirano => setUserReciklirano(reciklirano));
   }, []);
 
+  const getUserPoints = async () => {
+    let { data: korisnik_profil, error } = await supabase
+      .from('korisnik_profil')
+      .select('ukupno_poena');
+    
+    if (error) {
+      console.error('Error fetching user:', error);
+      return '0';
+    }
+    
+    return korisnik_profil?.[0]?.ukupno_poena || '0';
+  };
+  
+  const [userPoints, setUserPoints] = useState('');
+  useEffect(() => {
+    getUserPoints().then(points => setUserPoints(points));
+  }, []);
+
 
 
   
@@ -80,24 +98,12 @@ const stats = [
       unit: 'stvari',
       gradient: 'from-green-500 to-emerald-600',
     },
-    {
-      icon: Zap,
-      label: 'Sačuvana energija',
-      value: userData.energySaved,
-      unit: 'kWh',
-      gradient: 'from-yellow-500 to-orange-600',
-    },
-    {
-      icon: CloudRain,
-      label: 'Smanjen CO₂',
-      value: userData.co2Reduced,
-      unit: 'kg',
-      gradient: 'from-blue-500 to-cyan-600',
-    },
+    
+  
     {
       icon: Star,
       label: 'Ukupni poeni',
-      value: userData.points,
+      value: userPoints,
       unit: 'poena',
       gradient: 'from-purple-500 to-pink-600',
     },
